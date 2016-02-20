@@ -1,0 +1,36 @@
+allprojects {
+  apply plugin: 'java'
+  apply plugin: 'application'
+
+  sourceCompatibility = 1.8
+
+  repositories {
+    mavenLocal();
+    mavenCentral();
+  }
+}
+
+project(':service') {
+  dependencies {
+    compile 'io.baratine:baratine:0.11.2';
+  }
+
+  sourceSets {
+    main {
+      java {
+        srcDir 'src'
+      }
+      resources {
+        srcDir 'resources'
+      }
+    }
+  }
+
+  mainClassName = "toh.TourOfHeroesServer"
+}
+
+configurations {
+  provided
+  compile.extendsFrom provided
+}  
+
