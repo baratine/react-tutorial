@@ -26,7 +26,7 @@ project(':service') {
     }
   }
 
-  mainClassName = "toh.TourOfHeroesServer"
+  mainClassName = "react.CommentServer"
 }
 
 configurations {
